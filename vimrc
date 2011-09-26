@@ -13,6 +13,7 @@ syntax on
 colorscheme grb256
 filetype plugin indent on
 set background=light
+set encoding=utf-8
 
 let mapleader=","
 set ic
