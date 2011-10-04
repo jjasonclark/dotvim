@@ -43,3 +43,9 @@
 [submodule "bundle/git"]
 	path = bundle/git
 	url = https://github.com/tpope/vim-git.git
+[submodule "bundle/endwise"]
+	path = bundle/endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/vividchalk"]
+	path = bundle/vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
