@@ -16,7 +16,8 @@ set selectmode=mouse
 
 syntax enable
 syntax on
-colorscheme grb256
+colorscheme vividchalk
+" colorscheme grb256
 filetype plugin indent on
 set background=light
 set encoding=utf-8
