@@ -11,8 +11,10 @@ if has('gui_running')
 endif
 
 " allow using the mouse to select text
-set mouse=a
-set selectmode=mouse
+if has('mouse')
+    set mouse=a
+    set selectmode=mouse
+endif
 
 syntax enable
 syntax on
@@ -28,6 +30,12 @@ let mapleader=","
 set ic
 set hlsearch
 set incsearch
+nnoremap <leader><space> :noh<cr>
+
+"other
+set showmode
+set clipboard+=unnamed		"yanks to clipboard
+set backspace=indent,eol,start
 
 " Setup tabbing to be 4 spaces
 set shiftwidth=4
@@ -35,11 +43,15 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 set autoindent
+set copyindent
+set shiftround
 
 " Remove vim created files
-set nobackup
-set nowritebackup
-set noswapfile
+set backup
+set writebackup
+set swapfile
+set backupdir=~/tmp/vim/backup
+set directory=~/tmp/vim/tmp
 
 set shortmess=Ia
 set title
