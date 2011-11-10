@@ -7,7 +7,7 @@ runtime macros/matchit.vim
 if has('gui_running')
     set guifont=Monaco:h14
     set lines=40
-    set columns=100
+    set columns=130
 endif
 
 " allow using the mouse to select text
@@ -63,3 +63,6 @@ map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a
 map <c-a> ggVG
 
+" makegreen settings for rspec
+autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+map <Leader>g :call MakeGreen()<cr>
