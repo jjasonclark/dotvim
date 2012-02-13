@@ -82,6 +82,16 @@ if has("gui_macvim")
 	autocmd FocusLost * set transparency=50
 end
 
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+end
+
 map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a
 map <c-a> ggVG
