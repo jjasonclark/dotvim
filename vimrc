@@ -77,6 +77,10 @@ set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
+" makegreen settings for rspec
+autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+map <Leader>g :call MakeGreen()<cr>
+
 if has("gui_macvim")
 	autocmd FocusGained * set transparency=3
 	autocmd FocusLost * set transparency=50
@@ -120,13 +124,13 @@ function! s:swap_down()
     exec n + 1
 endfunction
 
+" move line up/down
 noremap <silent> <c-s-up> :call <SID>swap_up()<CR>
 noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 
+" save file
 map <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a
+" select all
 map <c-a> ggVG
 
-" makegreen settings for rspec
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-map <Leader>g :call MakeGreen()<cr>
