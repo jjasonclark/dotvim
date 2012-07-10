@@ -39,6 +39,10 @@ nnoremap <leader><space> :noh<cr>
 set showmode
 set backspace=indent,eol,start
 
+if $TMUX == ''
+    " set clipboard+=unnamed
+endif
+
 " Setup tabbing to be 4 spaces
 set shiftwidth=4
 set tabstop=4
