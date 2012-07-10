@@ -22,10 +22,10 @@ endif
 syntax enable
 syntax on
 colorscheme vividchalk
-" colorscheme grb256
 filetype plugin indent on
 set background=light
-set encoding=utf-8
+highlight LineNr ctermfg=white
+highligh LineNr ctermbg=black
 
 let mapleader=","
 
@@ -78,6 +78,7 @@ set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 " makegreen settings for rspec
+autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 map <Leader>g :call MakeGreen()<cr>
 
@@ -87,13 +88,13 @@ if has("gui_macvim")
 end
 
 if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
   set encoding=utf-8
   setglobal fileencoding=utf-8
   "setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
 end
 
 " Swap lines function from http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
@@ -129,8 +130,6 @@ noremap <silent> <c-s-up> :call <SID>swap_up()<CR>
 noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 
 " save file
-map <c-s> :w<cr>
-imap <c-s> <esc>:w<cr>a
-" select all
-map <c-a> ggVG
+map <c-s> :write<cr>
+imap <c-s> <esc>:write<cr>
 
