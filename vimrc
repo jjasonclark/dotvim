@@ -37,7 +37,6 @@ nnoremap <leader><space> :noh<cr>
 
 "other
 set showmode
-set clipboard+=unnamed		"yanks to clipboard
 set backspace=indent,eol,start
 
 " Setup tabbing to be 4 spaces
