@@ -7,7 +7,6 @@ set nocompatible
 " enable match it support
 runtime macros/matchit.vim
 
-
 if has('gui_running')
     set guifont=Monaco:h14
     set lines=40
@@ -80,10 +79,13 @@ set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
+<<<<<<< HEAD
 " makegreen settings for rspec
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
+=======
+>>>>>>> Clean up placement of plugin settings
 if has("gui_macvim")
 	autocmd FocusGained * set transparency=3
 	autocmd FocusLost * set transparency=50
@@ -99,17 +101,27 @@ if has("multi_byte")
   endif
 end
 
-" Plugins
-let g:CommandTMaxFiles=30000
-nmap <f3> :TagbarToggle<cr>
+" makegreen settings for rspec
+autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
+autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 map <Leader>g :call MakeGreen()<cr>
+
+" Tagbar
+nmap <f3> :TagbarToggle<cr>
+
+" CtrlP
+let g:ctrlp_max_files = 20000
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tmp$'
+
+nnoremap <silent> <f2> :NERDTreeToggle<cr>
+nnoremap <leader>gs :Gstatus<cr>
 
 " Swap lines function from http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
     let line2 = getline(a:n2)
     call setline(a:n1, line2)
-    call setline(a:n2, line1)
+        call setline(a:n2, line1)
 endfunction
 
 function! s:swap_up()
@@ -141,6 +153,4 @@ noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 " " call the file browser to save it, otherwise just save it.
 nnoremap <silent> <C-S> :write<cr>
 imap <c-s> <c-o><c-s>
-
-nnoremap <silent> <f2> :NERDTreeToggle<cr>
 nnoremap <leader>gs :Gstatus<cr>
