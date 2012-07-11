@@ -7,6 +7,7 @@ set nocompatible
 " enable match it support
 runtime macros/matchit.vim
 
+
 if has('gui_running')
     set guifont=Monaco:h14
     set lines=40
@@ -19,13 +20,11 @@ if has('mouse')
     set selectmode=mouse
 endif
 
-syntax enable
-syntax on
-colorscheme vividchalk
 filetype plugin indent on
-set background=light
-highlight LineNr ctermfg=white
-highligh LineNr ctermbg=black
+syntax enable on
+set background=dark
+colorscheme vividchalk
+highlight LineNr ctermfg=yellow ctermbg=black
 
 let mapleader=","
 
@@ -33,14 +32,14 @@ let mapleader=","
 set ic
 set hlsearch
 set incsearch
-nnoremap <leader><space> :noh<cr>
+nnoremap <cr> :nohlsearch<cr>
 
 "other
 set showmode
 set backspace=indent,eol,start
 
 if $TMUX == ''
-    " set clipboard+=unnamed
+    set clipboard+=unnamed
 endif
 
 " Setup tabbing to be 4 spaces
@@ -70,6 +69,7 @@ set laststatus=2
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L] 
 set statusline=   " clear the statusline for when vimrc is reloaded
 set statusline+=%-3.3n\                      " buffer number
+set statusline+=%{fugitive#statusline()}     " git brnahc
 set statusline+=%f\                          " file name
 set statusline+=%h%m%r%w                     " flags
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
@@ -129,10 +129,15 @@ function! s:swap_down()
 endfunction
 
 " move line up/down
-noremap <silent> <c-s-up> :call <SID>swap_up()<CR>
+noremap <silent> <C-s-up> :call <SID>swap_up()<CR>
 noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 
 " save file
-map <c-s> :write<cr>
-imap <c-s> <esc>:write<cr>
+" If the current buffer has never been saved, it will have no name,
+" " call the file browser to save it, otherwise just save it.
+nnoremap <silent> <C-S> :write<cr>
+imap <c-s> <c-o><c-s>
+
+nnoremap <silent> <f2> :NERDTreeToggle<cr>
+nnoremap <leader>gs :Gstatus<cr>
 
