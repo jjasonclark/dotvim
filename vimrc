@@ -100,6 +100,9 @@ if has("multi_byte")
   endif
 end
 
+" Tagbar
+nmap <f3> :TagbarToggle<cr>
+
 " Swap lines function from http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
