@@ -69,7 +69,7 @@ set laststatus=2
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L] 
 set statusline=   " clear the statusline for when vimrc is reloaded
 set statusline+=%-3.3n\                      " buffer number
-set statusline+=%{fugitive#statusline()}     " git brnahc
+set statusline+=%{fugitive#statusline()}\    " git brnahc
 set statusline+=%f\                          " file name
 set statusline+=%h%m%r%w                     " flags
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
@@ -83,7 +83,6 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 " makegreen settings for rspec
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-map <Leader>g :call MakeGreen()<cr>
 
 if has("gui_macvim")
 	autocmd FocusGained * set transparency=3
@@ -100,8 +99,10 @@ if has("multi_byte")
   endif
 end
 
-" Tagbar
+" Plugins
+let g:CommandTMaxFiles=30000
 nmap <f3> :TagbarToggle<cr>
+map <Leader>g :call MakeGreen()<cr>
 
 " Swap lines function from http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
 function! s:swap_lines(n1, n2)
@@ -143,4 +144,3 @@ imap <c-s> <c-o><c-s>
 
 nnoremap <silent> <f2> :NERDTreeToggle<cr>
 nnoremap <leader>gs :Gstatus<cr>
-
