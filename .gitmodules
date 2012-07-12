@@ -67,3 +67,6 @@
 [submodule "bundle/rubytest"]
 	path = bundle/rubytest
 	url = https://github.com/janx/vim-rubytest.git
+[submodule "bundle/refact"]
+	path = bundle/refact
+	url = https://github.com/taq/vim-refact.git
