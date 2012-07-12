@@ -79,13 +79,6 @@ set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-<<<<<<< HEAD
-" makegreen settings for rspec
-autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-=======
->>>>>>> Clean up placement of plugin settings
 if has("gui_macvim")
 	autocmd FocusGained * set transparency=3
 	autocmd FocusLost * set transparency=50
@@ -153,4 +146,3 @@ noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 " " call the file browser to save it, otherwise just save it.
 nnoremap <silent> <C-S> :write<cr>
 imap <c-s> <c-o><c-s>
-nnoremap <leader>gs :Gstatus<cr>
