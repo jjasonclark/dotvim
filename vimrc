@@ -142,7 +142,4 @@ noremap <silent> <C-s-up> :call <SID>swap_up()<CR>
 noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 
 " save file
-" If the current buffer has never been saved, it will have no name,
-" " call the file browser to save it, otherwise just save it.
-nnoremap <silent> <C-S> :write<cr>
-imap <c-s> <c-o><c-s>
+nnoremap <silent> <leader>s :write<cr>
