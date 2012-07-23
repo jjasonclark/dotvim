@@ -104,10 +104,15 @@ nmap <f3> :TagbarToggle<cr>
 
 " CtrlP
 let g:ctrlp_max_files = 20000
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tmp$'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
 
-nnoremap <silent> <f2> :NERDTreeToggle<cr>
-nnoremap <leader>gs :Gstatus<cr>
+" NERDTree
+nnoremap <f2> :NERDTreeFind<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Fugitive
+nnoremap <leader>vs :Gstatus<cr>
+nnoremap <leader>vw :Gwrite<cr>
 
 " Swap lines function from http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
 function! s:swap_lines(n1, n2)
@@ -138,8 +143,16 @@ function! s:swap_down()
 endfunction
 
 " move line up/down
-noremap <silent> <C-s-up> :call <SID>swap_up()<CR>
-noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
+nnoremap <silent> <C-s-up> :call <SID>swap_up()<CR>
+nnoremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 
 " save file
 nnoremap <silent> <leader>s :write<cr>
+
+" Shortcuts for editing
+nnoremap <silent> <leader>o :pu_<CR>
+nnoremap <silent> <leader>O :pu!_<CR>
+imap <c-l> <space>=><space>
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+imap ii <C-[>
