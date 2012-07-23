@@ -107,7 +107,7 @@ nmap <f3> :TagbarToggle<cr>
 let g:ctrlp_max_files = 20000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
 
-nnoremap <silent> <f2> :NERDTreeToggle<cr>
+nnoremap  <f2> :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " Fugitive
 nnoremap <leader>vs :Gstatus<cr>
@@ -148,7 +148,9 @@ nnoremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 " save file
 nnoremap <silent> <leader>s :write<cr>
 
-" swap ; and :
-nnoremap ; :
-nnoremap : ;
+nnoremap <silent> <leader>o :pu_<CR>
+nnoremap <silent> <leader>O :pu!_<CR>
 
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+imap ii <C-[>
