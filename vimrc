@@ -3,15 +3,10 @@ call pathogen#infect()
 call pathogen#helptags()
 
 set nocompatible
+filetype plugin indent on
 
 " enable match it support
 runtime macros/matchit.vim
-
-if has('gui_running')
-    set guifont=Monaco:h14
-    set lines=40
-    set columns=130
-endif
 
 " allow using the mouse to select text
 if has('mouse')
@@ -19,7 +14,6 @@ if has('mouse')
     set selectmode=mouse
 endif
 
-filetype plugin indent on
 syntax enable on
 set background=dark
 colorscheme vividchalk
@@ -28,9 +22,7 @@ highlight LineNr ctermfg=yellow ctermbg=black
 let mapleader=","
 
 " setup searching
-set ic
-set hlsearch
-set incsearch
+set ignorecase hlsearch incsearch
 nnoremap <cr> :nohlsearch<cr>
 
 "other
@@ -50,22 +42,22 @@ set autoindent
 set copyindent
 set shiftround
 
-" Remove vim created files
+" Place created files in a common place
 set backup
 set writebackup
 set swapfile
 set backupdir=~/tmp/vim/backup
 set directory=~/tmp/vim/tmp
 
-set shortmess=Ia
-set title
-set number
-set ruler
-set showcmd
+if &t_ts != ''
+    set title
+endif
 
-" Activate the statusline globally
+" Status line
 set laststatus=2
-" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L] 
+set shortmess=Ia
+set number
+set showcmd
 set statusline=   " clear the statusline for when vimrc is reloaded
 set statusline+=%-3.3n\                      " buffer number
 set statusline+=%{fugitive#statusline()}\    " git brnahc
@@ -80,9 +72,15 @@ set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 if has("gui_macvim")
+    set guifont=Monaco:h14
 	autocmd FocusGained * set transparency=3
 	autocmd FocusLost * set transparency=50
 end
+
+if has('gui_running')
+    set lines=40
+    set columns=130
+endif
 
 if has("multi_byte")
   set encoding=utf-8
