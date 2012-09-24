@@ -59,17 +59,21 @@ set shortmess=Ia
 set number
 set showcmd
 set statusline=   " clear the statusline for when vimrc is reloaded
-set statusline+=%-3.3n\                      " buffer number
-set statusline+=%{fugitive#statusline()}\    " git brnahc
+set statusline+=%-1.3n\                      " buffer number
+set statusline+=%{fugitive#statusline()}\    " git branch
 set statusline+=%f\                          " file name
+set statusline+=%=                           " right align
 set statusline+=%h%m%r%w                     " flags
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
-set statusline+=%{&fileformat}]              " file format
-set statusline+=%=                           " right align
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
-set statusline+=%b,0x%-8B\                   " current char
-set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+set statusline+=%{&fileformat}]\             " file format
+"set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+"set statusline+=%b,0x%-8B\                   " current char
+set statusline+=%-3.14(%l,%c%V%)\ %<%p%%      " offset
+
+" Enable CursorLine
+set cursorline
+highlight  CursorLine ctermbg=None ctermfg=None term=underline
 
 if has("gui_macvim")
     set guifont=Monaco:h14
@@ -148,6 +152,7 @@ nnoremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 nnoremap <silent> <leader>s :write<cr>
 
 " Shortcuts for editing
+nnoremap <silent> <leader>q :%s/[ \t]\+$//<CR>
 nnoremap <silent> <leader>o :pu_<CR>
 nnoremap <silent> <leader>O :pu!_<CR>
 imap <c-l> <space>=><space>
