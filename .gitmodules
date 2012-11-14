@@ -76,3 +76,6 @@
 [submodule "bundle/ruby-refactoring"]
 	path = bundle/ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/easybuffer"]
+	path = bundle/easybuffer
+	url = https://github.com/troydm/easybuffer.vim.git

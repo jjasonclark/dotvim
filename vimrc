@@ -103,6 +103,9 @@ autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 map <Leader>g :call MakeGreen()<cr>
 
+" EasyBuffer
+nmap <leader>e :EasyBuffer<cr>
+
 " Tagbar
 nmap <f3> :TagbarToggle<cr>
 
