@@ -28,10 +28,12 @@ nnoremap <cr> :nohlsearch<cr>
 "other
 set showmode
 set backspace=indent,eol,start
+set history=50
 
-if $TMUX == ''
-    set clipboard+=unnamed
-endif
+set clipboard+=*
+" if $TMUX == ''
+"     set clipboard+=unnamed
+" endif
 
 " Setup tabbing to be 4 spaces
 set shiftwidth=4
@@ -149,6 +151,7 @@ nnoremap <silent> <C-s-up> :call <SID>swap_up()<CR>
 nnoremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 
 " save file
+nnoremap <silent> <leader><leader> :write<cr>
 nnoremap <silent> <leader>s :write<cr>
 
 " Shortcuts for editing
@@ -158,4 +161,8 @@ nnoremap <silent> <leader>O :pu!_<CR>
 imap <c-l> <space>=><space>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
-imap ii <C-[>
+" imap ii <C-[>
+
+" Commands
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
