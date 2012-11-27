@@ -121,46 +121,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nnoremap <leader>vs :Gstatus<cr>
 nnoremap <leader>vw :Gwrite<cr>
 
-" Swap lines function from http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
-function! s:swap_lines(n1, n2)
-    let line1 = getline(a:n1)
-    let line2 = getline(a:n2)
-    call setline(a:n1, line2)
-        call setline(a:n2, line1)
-endfunction
-
-function! s:swap_up()
-    let n = line('.')
-    if n == 1
-        return
-    endif
-
-    call s:swap_lines(n, n - 1)
-    exec n - 1
-endfunction
-
-function! s:swap_down()
-    let n = line('.')
-    if n == line('$')
-        return
-    endif
-
-    call s:swap_lines(n, n + 1)
-    exec n + 1
-endfunction
-
-" move line up/down
-nnoremap <silent> <C-s-up> :call <SID>swap_up()<CR>
-nnoremap <silent> <c-s-down> :call <SID>swap_down()<CR>
-
 " save file
 nnoremap <silent> <leader><leader> :write<cr>
 nnoremap <silent> <leader>s :write<cr>
 
 " Shortcuts for editing
 nnoremap <silent> <leader>q :%s/[ \t]\+$//<CR>
-nnoremap <silent> <leader>o :pu_<CR>
-nnoremap <silent> <leader>O :pu!_<CR>
 imap <c-l> <space>=><space>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
