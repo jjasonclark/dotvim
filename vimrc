@@ -30,10 +30,7 @@ set showmode
 set backspace=indent,eol,start
 set history=50
 
-set clipboard+=*
-" if $TMUX == ''
-"     set clipboard+=unnamed
-" endif
+set clipboard+=unnamed
 
 " Setup tabbing to be 4 spaces
 set shiftwidth=4
