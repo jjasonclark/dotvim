@@ -29,7 +29,7 @@ nnoremap <cr> :nohlsearch<cr>
 set showmode
 set backspace=indent,eol,start
 set history=50
-
+set nrformats=alpha
 set clipboard+=unnamed
 
 " Setup tabbing to be 4 spaces
