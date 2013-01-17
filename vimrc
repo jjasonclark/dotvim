@@ -31,6 +31,9 @@ set backspace=indent,eol,start
 set history=50
 set nrformats=alpha
 set clipboard+=unnamed
+set ttyfast
+set lazyredraw
+set linebreak
 
 " Setup tabbing to be 4 spaces
 set shiftwidth=4
@@ -108,12 +111,19 @@ let g:ctrlp_max_files = 20000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
 
 " NERDTree
+let NERDTreeIgnore=['.DS_Store']
 nnoremap <f2> :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Fugitive
 nnoremap <leader>vs :Gstatus<cr>
 nnoremap <leader>vw :Gwrite<cr>
+
+" Vim-gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_get_multiplefile = 1
 
 " save file
 nnoremap <silent> <leader><leader> :write<cr>
