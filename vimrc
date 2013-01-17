@@ -119,6 +119,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nnoremap <leader>vs :Gstatus<cr>
 nnoremap <leader>vw :Gwrite<cr>
 
+" Vim-gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_get_multiplefile = 1
+
 " save file
 nnoremap <silent> <leader><leader> :write<cr>
 nnoremap <silent> <leader>s :write<cr>
