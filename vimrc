@@ -43,6 +43,7 @@ set expandtab
 set autoindent
 set copyindent
 set shiftround
+set indentexpr=GetRubyIndent()
 
 " Place created files in a common place
 set backup
