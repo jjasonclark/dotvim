@@ -29,7 +29,7 @@ nnoremap <cr> :nohlsearch<cr>
 set showmode
 set backspace=indent,eol,start
 set history=50
-set nrformats=alpha
+set nrformats=
 set clipboard+=unnamed
 set ttyfast
 set lazyredraw
@@ -136,7 +136,11 @@ imap <c-l> <space>=><space>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 " imap ii <C-[>
+map <leader>l :ls<cr>
 
 " Commands
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
+" File types
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
+au BufRead,BufNewFile *.json set ft=javascript
