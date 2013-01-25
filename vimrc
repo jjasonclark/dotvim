@@ -136,7 +136,7 @@ imap <c-l> <space>=><space>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 " imap ii <C-[>
-map <leader>l :ls<cr>
+map <leader>k :ls<cr>
 
 " Commands
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
