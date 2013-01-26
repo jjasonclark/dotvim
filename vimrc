@@ -137,6 +137,7 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 " imap ii <C-[>
 map <leader>k :ls<cr>
+map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 
 " Commands
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
