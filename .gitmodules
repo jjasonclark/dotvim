@@ -91,3 +91,6 @@
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/indentobject"]
+	path = bundle/indentobject
+	url = https://github.com/austintaylor/vim-indentobject.git
