@@ -4,7 +4,11 @@ I'm attepting to learn VIM again. These are my current set of configuration file
 
 ## Install instructions
 
-1. mkdir -p ~/tmp/vim/backup
-1. mkdir -p ~/tmp/vim/tmp
-1. git submodule update --init
-1. ln ~/.vim/vimrc ~/.vimrc
+Run the following commands
+
+```shell
+mkdir -p ~/tmp/vim/backup
+mkdir -p ~/tmp/vim/tmp
+git submodule update --init
+ln -s `pwd`/vimrc ~/.vimrc
+```
