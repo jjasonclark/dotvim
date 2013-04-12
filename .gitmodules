@@ -97,3 +97,6 @@
 [submodule "bundle/blockle"]
 	path = bundle/blockle
 	url = https://github.com/jgdavey/vim-blockle.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
