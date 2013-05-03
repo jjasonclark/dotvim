@@ -99,6 +99,9 @@ if has("multi_byte")
   endif
 end
 
+" Save system files
+command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
+
 " makegreen settings for rspec
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
@@ -140,7 +143,7 @@ map <leader>k :ls<cr>
 map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 
 " Commands
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 " File types
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
