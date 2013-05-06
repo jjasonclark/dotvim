@@ -5,6 +5,11 @@ call pathogen#helptags()
 set nocompatible
 filetype plugin indent on
 
+set path=**
+set wildmode=full
+set wildmenu
+set wildignore=.git/*
+
 " enable match it support
 runtime macros/matchit.vim
 
@@ -146,5 +151,5 @@ map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 " File types
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
