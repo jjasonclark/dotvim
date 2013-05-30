@@ -30,6 +30,8 @@ let mapleader=","
 set ignorecase hlsearch incsearch
 nnoremap <silent> <C-L> :nohlsearch<cr>
 
+set spell
+
 "other
 set showmode
 set backspace=indent,eol,start
