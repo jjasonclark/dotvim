@@ -28,22 +28,22 @@ let mapleader=","
 
 " setup searching
 set ignorecase hlsearch incsearch
-nnoremap <cr> :nohlsearch<cr>
+nnoremap <silent> <C-L> :nohlsearch<cr>
 
 "other
 set showmode
 set backspace=indent,eol,start
 set history=50
-set nrformats=
+set nrformats-=octal
 set clipboard+=unnamed
 set ttyfast
 set lazyredraw
 set linebreak
 
-" Setup tabbing to be 4 spaces
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+" Setup tabbing to be 2 spaces
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
 set autoindent
 set copyindent
@@ -104,6 +104,14 @@ if has("multi_byte")
   endif
 end
 
+" Better looking list characters
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+  endif
+endif
+
 " Save system files
 command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
 
@@ -111,9 +119,6 @@ command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent e
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 map <Leader>g :call MakeGreen()<cr>
-
-" Tagbar
-nmap <f3> :TagbarToggle<cr>
 
 " CtrlP
 let g:ctrlp_max_files = 20000
