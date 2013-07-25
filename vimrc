@@ -86,15 +86,16 @@ set cursorline
 highlight  CursorLine ctermbg=None ctermfg=None term=underline
 
 if has("gui_macvim")
-    set guifont=Monaco:h14
+  set guifont=Monaco:h12
+
+	" Remove all scrollbars
+	set guioptions-=r
+	set guioptions-=L
+
+	" Setup GUI see through when not in focus
 	autocmd FocusGained * set transparency=3
 	autocmd FocusLost * set transparency=50
 end
-
-if has('gui_running')
-    set lines=40
-    set columns=130
-endif
 
 if has("multi_byte")
   set encoding=utf-8
@@ -117,10 +118,7 @@ endif
 " Save system files
 command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
 
-" makegreen settings for rspec
-autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-map <Leader>g :call MakeGreen()<cr>
+autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
 " CtrlP
 let g:ctrlp_max_files = 20000
@@ -160,3 +158,4 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | d
 " File types
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
+autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
