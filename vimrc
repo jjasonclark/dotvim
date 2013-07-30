@@ -156,6 +156,7 @@ map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 " File types
+au BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set ft=markdown
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.json set ft=javascript
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
