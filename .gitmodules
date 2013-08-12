@@ -103,3 +103,6 @@
 [submodule "bundle/ruby-minitest"]
 	path = bundle/ruby-minitest
 	url = https://github.com/sunaku/vim-ruby-minitest.git
+[submodule "bundle/xterm-color-table"]
+	path = bundle/xterm-color-table
+	url = https://github.com/guns/xterm-color-table.vim.git
