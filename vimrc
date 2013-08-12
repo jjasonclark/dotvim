@@ -20,6 +20,7 @@ if has('mouse')
 endif
 
 syntax enable on
+set t_Co=256
 set background=dark
 colorscheme vividchalk
 highlight LineNr ctermfg=yellow ctermbg=black
@@ -29,8 +30,6 @@ let mapleader=","
 " setup searching
 set ignorecase hlsearch incsearch
 nnoremap <silent> <C-L> :nohlsearch<cr>
-
-set spell
 
 "other
 set showmode
@@ -83,7 +82,9 @@ set statusline+=%-3.14(%l,%c%V%)\ %<%p%%      " offset
 
 " Enable CursorLine
 set cursorline
-highlight  CursorLine ctermbg=None ctermfg=None term=underline
+highlight CursorLine ctermfg=None ctermbg=235
+autocmd InsertEnter * highlight CursorLine ctermfg=None ctermbg=8
+autocmd InsertLeave * highlight CursorLine ctermfg=None ctermbg=235
 
 if has("gui_macvim")
   set guifont=Monaco:h12
@@ -115,9 +116,7 @@ if &listchars ==# 'eol:$'
   endif
 endif
 
-" Save system files
-command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
-
+" Folding settings
 autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
 " CtrlP
@@ -129,19 +128,11 @@ let NERDTreeIgnore=['.DS_Store']
 nnoremap <f2> :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Fugitive
-nnoremap <leader>vs :Gstatus<cr>
-nnoremap <leader>vw :Gwrite<cr>
-
 " Vim-gist
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_get_multiplefile = 1
-
-" save file
-nnoremap <silent> <leader><leader> :write<cr>
-nnoremap <silent> <leader>s :write<cr>
 
 " Shortcuts for editing
 nnoremap <silent> <leader>q :%s/[ \t]\+$//<CR>
@@ -154,9 +145,18 @@ map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 
 " Commands
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
+command! Q :quit
 
 " File types
-au BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set ft=markdown
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set ft=ruby
-au BufRead,BufNewFile *.json set ft=javascript
+autocmd BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set ft=markdown
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set ft=ruby
+autocmd BufRead,BufNewFile *.json set ft=javascript
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
+
+" Productivity shortcuts
+nnoremap <silent> <leader><leader> :write<cr>
+nnoremap <leader>rl :Rlib
+nnoremap <leader>vs :Gstatus<cr>
+nnoremap <leader>vw :Gwrite<cr>
+nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
