@@ -80,11 +80,15 @@ set statusline+=%{&fileformat}]\             " file format
 "set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-3.14(%l,%c%V%)\ %<%p%%      " offset
 
-" Enable CursorLine
-set cursorline
+" CursorLine
 highlight CursorLine ctermfg=None ctermbg=235
 autocmd InsertEnter * highlight CursorLine ctermfg=None ctermbg=8
 autocmd InsertLeave * highlight CursorLine ctermfg=None ctermbg=235
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+autocmd BufEnter * setlocal cursorline
+autocmd BufLeave * setlocal nocursorline
+
 
 if has("gui_macvim")
   set guifont=Monaco:h12
