@@ -159,7 +159,7 @@ autocmd BufRead,BufNewFile *.json set ft=javascript
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 
 " Productivity shortcuts
-nnoremap <silent> <leader><leader> :write<cr>
+nnoremap <silent> <leader><leader> :update<cr>
 nnoremap <leader>rl :Rlib
 nnoremap <leader>vs :Gstatus<cr>
 nnoremap <leader>vw :Gwrite<cr>
