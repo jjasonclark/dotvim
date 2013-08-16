@@ -106,3 +106,6 @@
 [submodule "bundle/xterm-color-table"]
 	path = bundle/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
+[submodule "bundle/ruby-xmpfilter"]
+	path = bundle/ruby-xmpfilter
+	url = https://github.com/t9md/vim-ruby-xmpfilter.git
