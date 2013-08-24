@@ -164,3 +164,4 @@ nnoremap <leader>rl :Rlib
 nnoremap <leader>vs :Gstatus<cr>
 nnoremap <leader>vw :Gwrite<cr>
 nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
+nnoremap <silent> <leader>rx :call xmpfilter#run('n')<CR>
