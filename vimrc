@@ -11,7 +11,7 @@ set wildmenu
 set wildignore=.git/*
 
 " enable match it support
-runtime macros/matchit.vim
+runtime plugin/matchit.vim
 
 " allow using the mouse to select text
 if has('mouse')
@@ -57,6 +57,10 @@ set writebackup
 set swapfile
 set backupdir=~/tmp/vim/backup
 set directory=~/tmp/vim/tmp
+set undodir=~/tmp/vim/undo
+
+set undolevels=1000
+set undoreload=10000
 
 if &t_ts != ''
     set title
