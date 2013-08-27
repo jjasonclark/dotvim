@@ -50,17 +50,29 @@ set autoindent
 set copyindent
 set shiftround
 set indentexpr=GetRubyIndent()
+set completefunc=syntaxcomplete#Complete
+
+" Ensure directories exist
+if !isdirectory(expand("~/tmp/vim/backup"))
+  silent !mkdir -p ~/tmp/vim/backup
+endif
+if !isdirectory(expand("~/tmp/vim/tmp"))
+  silent !mkdir -p ~/tmp/vim/tmp
+endif
+if !isdirectory(expand("~/tmp/vim/undo"))
+  silent !mkdir -p ~/tmp/vim/undo
+endif
 
 " Place created files in a common place
 set backup
 set writebackup
 set swapfile
+set undofile
+set undolevels=1000
+set undoreload=10000
 set backupdir=~/tmp/vim/backup
 set directory=~/tmp/vim/tmp
 set undodir=~/tmp/vim/undo
-
-set undolevels=1000
-set undoreload=10000
 
 if &t_ts != ''
     set title
@@ -92,7 +104,6 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 autocmd BufEnter * setlocal cursorline
 autocmd BufLeave * setlocal nocursorline
-
 
 if has("gui_macvim")
   set guifont=Monaco:h12
@@ -142,12 +153,24 @@ let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_get_multiplefile = 1
 
+" Tabular plugin
+if exists('g:tabular_loaded')
+  AddTabularPattern! symbols         / :/l0
+  AddTabularPattern! hash            /^[^>]*\zs=>/
+  AddTabularPattern! chunks          / \S\+/l0
+  AddTabularPattern! assignment      / = /l0
+  AddTabularPattern! comma           /^[^,]*,/l1
+  AddTabularPattern! colon           /:\zs /l0
+  AddTabularPattern! options_hashes  /:\w\+ =>/
+endif
+
 " Shortcuts for editing
-nnoremap <silent> <leader>q :%s/[ \t]\+$//<CR>
+nnoremap <space> :
+nnoremap <silent> <leader>q :%s/\s\+$//<CR>
 imap <c-l> <space>=><space>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
-" imap ii <C-[>
+" imap kj <C-[>
 map <leader>k :ls<cr>
 map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 
@@ -155,6 +178,7 @@ map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
 command! Q :quit
+cnoreabbrev E e
 
 " File types
 autocmd BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set ft=markdown
@@ -169,3 +193,4 @@ nnoremap <leader>vs :Gstatus<cr>
 nnoremap <leader>vw :Gwrite<cr>
 nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
 nnoremap <silent> <leader>rx :call xmpfilter#run('n')<CR>
+nnoremap <leader>sv :vsplit %:h/
