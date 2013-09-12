@@ -194,3 +194,10 @@ nnoremap <leader>vw :Gwrite<cr>
 nnoremap <silent> <leader>s :setlocal spell! spelllang=en_us<CR>
 nnoremap <silent> <leader>rx :call xmpfilter#run('n')<CR>
 nnoremap <leader>sv :vsplit %:h/
+
+" Dates
+imap <Leader>ymd <C-R>=strftime("%Y-%m-%d")<CR>
+imap <Leader>mdy <C-R>=strftime("%m-%d-%Y")<CR>
+imap <Leader>ndy <C-R>=strftime("%b %d, %Y")<CR>
+imap <Leader>ynd <C-R>=strftime("%Y %b %d")<CR>
+imap <Leader>hms <C-R>=strftime("%T")<CR>
