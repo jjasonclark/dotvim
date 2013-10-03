@@ -153,17 +153,6 @@ let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_get_multiplefile = 1
 
-" Tabular plugin
-if exists(':Tabularize')
-  AddTabularPattern! symbols         / :/l0
-  AddTabularPattern! hash            /^[^>]*\zs=>/
-  AddTabularPattern! chunks          / \S\+/l0
-  AddTabularPattern! assignment      / = /l0
-  AddTabularPattern! comma           /^[^,]*,/l1
-  AddTabularPattern! colon           /:\zs /l0
-  AddTabularPattern! options_hashes  /:\w\+ =>/
-endif
-
 " Shortcuts for editing
 nnoremap <space> :
 nnoremap <silent> <leader>q :%s/\s\+$//<CR>
