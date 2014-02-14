@@ -112,3 +112,6 @@
 [submodule "bundle/jdaddy"]
 	path = bundle/jdaddy
 	url = https://github.com/tpope/vim-jdaddy.git
+[submodule "bundle/abolish"]
+	path = bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
