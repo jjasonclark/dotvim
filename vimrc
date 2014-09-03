@@ -97,13 +97,13 @@ set statusline+=%{&fileformat}]\             " file format
 set statusline+=%-3.14(%l,%c%V%)\ %<%p%%      " offset
 
 " CursorLine
-highlight CursorLine ctermfg=None ctermbg=235
-autocmd InsertEnter * highlight CursorLine ctermfg=None ctermbg=234
-autocmd InsertLeave * highlight CursorLine ctermfg=None ctermbg=235
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-autocmd BufEnter * setlocal cursorline
-autocmd BufLeave * setlocal nocursorline
+" highlight CursorLine ctermfg=None ctermbg=235
+" autocmd InsertEnter * highlight CursorLine ctermfg=None ctermbg=234
+" autocmd InsertLeave * highlight CursorLine ctermfg=None ctermbg=235
+" autocmd WinEnter * setlocal cursorline
+" autocmd WinLeave * setlocal nocursorline
+" autocmd BufEnter * setlocal cursorline
+" autocmd BufLeave * setlocal nocursorline
 
 if has("gui_macvim")
   set guifont=Monaco:h12
