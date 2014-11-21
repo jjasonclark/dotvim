@@ -138,6 +138,9 @@ endif
 " Folding settings
 autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
+" Tagbar
+nnoremap <f3> :TagbarToggle<CR>
+
 " CtrlP
 let g:ctrlp_max_files = 20000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
