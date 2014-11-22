@@ -227,9 +227,9 @@ command! Q :quit
 cnoreabbrev E e
 
 " File types
-autocmd BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set ft=markdown
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set ft=ruby
-autocmd BufRead,BufNewFile *.json set ft=javascript
+autocmd BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set filetype=markdown
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set filetype=ruby
+autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 
 " Productivity shortcuts
