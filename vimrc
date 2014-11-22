@@ -141,6 +141,15 @@ autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v
 " Tagbar
 nnoremap <f3> :TagbarToggle<CR>
 
+" Syntastic
+let g:syntastic_ruby = ['rubocop', 'mri']
+let g:syntastic_jshint_exec='/usr/local/bin/jshint'
+let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 0
+
 " CtrlP
 let g:ctrlp_max_files = 20000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
