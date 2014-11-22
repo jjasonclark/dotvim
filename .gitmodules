@@ -136,3 +136,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim-easytags"]
+	path = vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
