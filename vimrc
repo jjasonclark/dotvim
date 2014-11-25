@@ -88,9 +88,6 @@ set statusline+=%-1.3n\                      " buffer number
 set statusline+=%{fugitive#statusline()}\    " git branch
 set statusline+=%f\                          " file name
 set statusline+=%=                           " right align
-set statusline+=%#warningmsg#                " Syntastic warning message
-set statusline+=%{SyntasticStatuslineFlag()} " Syntastic flags
-set statusline+=%*
 set statusline+=%h%m%r%w                     " flags
 set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
@@ -144,7 +141,6 @@ autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v
 " Syntastic
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 let g:syntastic_json_checkers          = ['jsonlint']
-" let g:syntastic_ruby_rubocop_exec      = 'RBENV_VERSION=2.1.5 /Users/jjasonclark/.rbenv/shims/rubocop'
 let g:syntastic_ruby_rubocop_exec      = '/Users/jjasonclark/source/consulting/par8o/par8o/bin/rubocop'
 let g:syntastic_javascript_jshint_exec = '/usr/local/bin/jshint'
 let g:syntastic_json_jsonlint_exec     = '/usr/local/bin/jsonlint'
