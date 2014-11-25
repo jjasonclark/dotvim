@@ -141,9 +141,6 @@ endif
 " Folding settings
 autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
-" Tagbar
-nnoremap <f3> :TagbarToggle<CR>
-
 " Syntastic
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 let g:syntastic_json_checkers          = ['jsonlint']
