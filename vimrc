@@ -141,23 +141,21 @@ endif
 " Folding settings
 autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
-" Tagbar
-nnoremap <f3> :TagbarToggle<CR>
-
 " Syntastic
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 let g:syntastic_json_checkers          = ['jsonlint']
-let g:syntastic_ruby_rubocop_exec      = '/Users/jjasonclark/.rbenv/shims/rubocop'
+" let g:syntastic_ruby_rubocop_exec      = 'RBENV_VERSION=2.1.5 /Users/jjasonclark/.rbenv/shims/rubocop'
+let g:syntastic_ruby_rubocop_exec      = '/Users/jjasonclark/source/consulting/par8o/par8o/bin/rubocop'
 let g:syntastic_javascript_jshint_exec = '/usr/local/bin/jshint'
 let g:syntastic_json_jsonlint_exec     = '/usr/local/bin/jsonlint'
 let g:syntastic_error_symbol           = '✗'
 let g:syntastic_warning_symbol         = '⚠'
 let g:syntastic_check_on_open          = 0
 let g:syntastic_check_on_write         = 1
+let g:syntastic_check_on_wq            = 0
 let g:syntastic_enable_signs           = 1
 let g:syntastic_aggregate_errors       = 0
 let g:syntastic_quiet_message          = 0
-let g:syntastic_check_on_wq            = 0
 
 " CtrlP
 let g:ctrlp_max_files = 20000
