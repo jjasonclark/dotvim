@@ -136,3 +136,6 @@
 [submodule "vim-easytags"]
 	path = vim-easytags
 	url = https://github.com/xolox/vim-easytags.git
+[submodule "bundle/vim-rbenv"]
+	path = bundle/vim-rbenv
+	url = https://github.com/tpope/vim-rbenv.git
