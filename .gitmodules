@@ -118,9 +118,6 @@
 [submodule "bundle/eunuch"]
 	path = bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "bundle/dash"]
-	path = bundle/dash
-	url = git@github.com:rizzatti/dash.vim.git
 [submodule "bundle/vim-angular"]
 	path = bundle/vim-angular
 	url = https://github.com/burnettk/vim-angular.git
