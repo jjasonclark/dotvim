@@ -220,7 +220,6 @@ nnoremap <silent> <leader>q :%s/\s\+$//<CR>
 imap <c-l> <space>=><space>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
-" imap kj <C-[>
 map <leader>k :ls<cr>
 map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 
@@ -237,7 +236,6 @@ autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 
 " Productivity shortcuts
-inoremap <silent> <leader><leader> <ESC>
 nnoremap <silent> <leader><leader> :update<cr>
 nnoremap <leader>rl :Rlib
 nnoremap <leader>vs :Gstatus<cr>
