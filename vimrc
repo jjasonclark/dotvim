@@ -140,6 +140,7 @@ autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v
 
 " Syntastic
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
+let g:syntastic_javascript_checkers    = ['jshint']
 let g:syntastic_json_checkers          = ['jsonlint']
 let g:syntastic_ruby_rubocop_exec      = '/Users/jjasonclark/source/consulting/par8o/par8o/bin/rubocop'
 let g:syntastic_javascript_jshint_exec = '/usr/local/bin/jshint'
