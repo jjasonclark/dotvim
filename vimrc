@@ -154,6 +154,9 @@ let g:syntastic_enable_signs           = 1
 let g:syntastic_aggregate_errors       = 0
 let g:syntastic_quiet_message          = 0
 
+" vim-easytags
+let g:easytags_cmd = '/usr/local/bin/ctags'
+
 " CtrlP
 let g:ctrlp_max_files = 20000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
