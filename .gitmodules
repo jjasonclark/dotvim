@@ -154,3 +154,6 @@
 [submodule "bundle/csv-vim"]
 	path = bundle/csv-vim
 	url = https://github.com/chrisbra/csv.vim.git
+[submodule "bundle/todo.txt-vim"]
+	path = bundle/todo.txt-vim
+	url = https://github.com/freitass/todo.txt-vim.git
