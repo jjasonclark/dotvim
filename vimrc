@@ -160,7 +160,7 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\.tmp$'
 
 " NERDTree
 let NERDTreeIgnore=['.DS_Store']
-" nnoremap <f2> :NERDTreeFind<CR>
+nnoremap <f2> :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " NetRW
@@ -183,7 +183,7 @@ function! ToggleVExplorer()
       let t:expl_buf_num = bufnr("%")
   endif
 endfunction
-nnoremap <f2> :call ToggleVExplorer()<cr>
+" nnoremap <f2> :call ToggleVExplorer()<cr>
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
