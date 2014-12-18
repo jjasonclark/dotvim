@@ -249,3 +249,5 @@ imap <Leader>mdy <C-R>=strftime("%m-%d-%Y")<CR>
 imap <Leader>ndy <C-R>=strftime("%b %d, %Y")<CR>
 imap <Leader>ynd <C-R>=strftime("%Y %b %d")<CR>
 imap <Leader>hms <C-R>=strftime("%T")<CR>
+
+nnoremap <Leader>1 :only<CR>
