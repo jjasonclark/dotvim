@@ -145,3 +145,6 @@
 [submodule "bundle/todo.txt-vim"]
 	path = bundle/todo.txt-vim
 	url = https://github.com/freitass/todo.txt-vim.git
+[submodule "bundle/youcompleteme"]
+	path = bundle/youcompleteme
+	url = https://github.com/Valloric/YouCompleteMe.git
