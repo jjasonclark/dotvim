@@ -138,6 +138,9 @@ endif
 " Folding settings
 autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
+" YouCompleteMe
+let g:ycm_path_to_python_interpreter = "/usr/bin/python"
+
 " Syntastic
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 let g:syntastic_javascript_checkers    = ['jshint']
