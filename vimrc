@@ -218,6 +218,7 @@ nnoremap <silent> <leader>rt :Dispatch<cr>
 nnoremap <space> :
 nnoremap <silent> <leader>q :%s/\s\+$//<CR>
 imap <c-l> <space>=><space>
+imap <c-j> <esc>
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 map <leader>k :ls<cr>
