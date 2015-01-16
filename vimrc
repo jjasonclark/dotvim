@@ -199,6 +199,9 @@ let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_get_multiplefile = 1
 
+" vim-closetag
+let g:closetag_filenames = "*.html,*.xhtml,*.erb,*.hbs"
+
 " Tabular plugin
 if exists(':Tabularize')
   AddTabularPattern! symbols         / :/l0
