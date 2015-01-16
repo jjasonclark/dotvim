@@ -145,3 +145,6 @@
 [submodule "bundle/youcompleteme"]
 	path = bundle/youcompleteme
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim-exchange"]
+	path = bundle/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange.git
