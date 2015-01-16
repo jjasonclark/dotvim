@@ -148,3 +148,6 @@
 [submodule "bundle/vim-exchange"]
 	path = bundle/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange.git
+[submodule "bundle/vim-ragtag"]
+	path = bundle/vim-ragtag
+	url = https://github.com/tpope/vim-ragtag.git
