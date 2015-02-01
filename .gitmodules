@@ -103,9 +103,6 @@
 [submodule "bundle/ruby-xmpfilter"]
 	path = bundle/ruby-xmpfilter
 	url = https://github.com/t9md/vim-ruby-xmpfilter.git
-[submodule "bundle/jdaddy"]
-	path = bundle/jdaddy
-	url = https://github.com/tpope/vim-jdaddy.git
 [submodule "bundle/abolish"]
 	path = bundle/abolish
 	url = https://github.com/tpope/vim-abolish.git
