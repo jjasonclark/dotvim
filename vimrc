@@ -167,6 +167,9 @@ nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outl
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
+" Quick jump to todo file
+nnoremap <leader>p :e ~/Dropbox/todo/todo.txt<CR>
+
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
@@ -253,6 +256,7 @@ map <leader>f :! echo % \| tr -d '\n\r' \| pbcopy<cr><cr>
 " Commands
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 command! -bar -nargs=0 SudoW :silent exe "write !sudo tee % >/dev/null"|silent edit!
+command! Qa :qa
 command! Q :quit
 cnoreabbrev E e
 
