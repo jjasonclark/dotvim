@@ -163,3 +163,6 @@
 [submodule "bundle/unite"]
 	path = bundle/unite
 	url = https://github.com/Shougo/unite.vim.git
+[submodule "bundle/text-object-left-and-right"]
+	path = bundle/text-object-left-and-right
+	url = https://github.com/vim-scripts/text-object-left-and-right.git
