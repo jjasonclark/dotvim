@@ -172,3 +172,6 @@
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
+[submodule "bundle/switch"]
+	path = bundle/switch
+	url = https://github.com/AndrewRadev/switch.vim.git
