@@ -157,6 +157,12 @@ let g:syntastic_enable_signs           = 1
 let g:syntastic_aggregate_errors       = 0
 let g:syntastic_quiet_message          = 0
 
+" delimiMate
+let delimitMate_autospace = 1
+let delimitMate_autoclose = 1
+let delimitMate_expand_cr = 2
+let delimitMate_expand_space = 1
+
 " Unite
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
