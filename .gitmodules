@@ -175,3 +175,6 @@
 [submodule "bundle/switch"]
 	path = bundle/switch
 	url = https://github.com/AndrewRadev/switch.vim.git
+[submodule "bundle/vim-toml"]
+	path = bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git
