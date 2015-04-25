@@ -247,6 +247,11 @@ nnoremap <silent> <leader>rf :Focus %<cr>
 nnoremap <silent> <leader>rF :Focus!<cr>
 nnoremap <silent> <leader>rt :Dispatch<cr>
 
+" Add Go Lint command
+if isdirectory(expand("$GOPATH/src/github.com/golang/lint/misc/vim"))
+  set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+endif
+
 " ===============
 
 " Shortcuts for editing
