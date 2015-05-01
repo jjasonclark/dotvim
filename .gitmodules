@@ -181,3 +181,6 @@
 [submodule "bundle/splitjoin"]
 	path = bundle/splitjoin
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "bundle/golang-template"]
+	path = bundle/golang-template
+	url = https://github.com/ddollar/golang-template.vim.git
