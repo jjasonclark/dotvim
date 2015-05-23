@@ -288,6 +288,7 @@ autocmd BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set filetype=markdown
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set filetype=ruby
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
+autocmd FileType gitcommit setlocal spell
 
 " Productivity shortcuts
 nnoremap <silent> <leader><leader> :update<cr>
