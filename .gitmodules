@@ -187,3 +187,6 @@
 [submodule "bundle/tbone"]
 	path = bundle/tbone
 	url = https://github.com/tpope/vim-tbone.git
+[submodule "bundle/language-check"]
+	path = bundle/language-check
+	url = https://github.com/myint/language-check.git
