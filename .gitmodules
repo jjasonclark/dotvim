@@ -190,3 +190,6 @@
 [submodule "bundle/language-check"]
 	path = bundle/language-check
 	url = https://github.com/myint/language-check.git
+[submodule "bundle/file-line"]
+	path = bundle/file-line
+	url = https://github.com/bogado/file-line.git
