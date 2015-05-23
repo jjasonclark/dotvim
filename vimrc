@@ -142,20 +142,25 @@ autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v
 let g:ycm_path_to_python_interpreter = "/usr/bin/python"
 
 " Syntastic
-let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
-let g:syntastic_javascript_checkers    = ['jshint']
-let g:syntastic_json_checkers          = ['jsonlint']
-let g:syntastic_ruby_rubocop_exec      = '/Users/jjasonclark/source/consulting/par8o/par8o/bin/rubocop'
-let g:syntastic_javascript_jshint_exec = '/usr/local/bin/jshint'
-let g:syntastic_json_jsonlint_exec     = '/usr/local/bin/jsonlint'
-let g:syntastic_error_symbol           = '✗'
-let g:syntastic_warning_symbol         = '⚠'
-let g:syntastic_check_on_open          = 0
-let g:syntastic_check_on_write         = 0
-let g:syntastic_check_on_wq            = 0
-let g:syntastic_enable_signs           = 1
-let g:syntastic_aggregate_errors       = 0
-let g:syntastic_quiet_message          = 0
+let g:syntastic_text_checkers            = ['language_check']
+let g:syntastic_text_language_check_args = '--language=en-US'
+let g:syntastic_ruby_checkers            = ['rubocop', 'mri']
+let g:syntastic_javascript_checkers      = ['jshint']
+let g:syntastic_json_checkers            = ['jsonlint']
+let g:syntastic_ruby_rubocop_exec        = '/Users/jjasonclark/source/consulting/par8o/par8o/bin/rubocop'
+let g:syntastic_javascript_jshint_exec   = '/usr/local/bin/jshint'
+let g:syntastic_json_jsonlint_exec       = '/usr/local/bin/jsonlint'
+let g:syntastic_error_symbol             = '✗'
+let g:syntastic_warning_symbol           = '⚠'
+let g:syntastic_check_on_open            = 0
+let g:syntastic_check_on_write           = 0
+let g:syntastic_check_on_wq              = 0
+let g:syntastic_enable_signs             = 1
+let g:syntastic_aggregate_errors         = 0
+let g:syntastic_quiet_message            = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 1
+nnoremap <leader>i :SyntasticCheck<cr>
 
 " delimiMate
 let delimitMate_autospace = 1
