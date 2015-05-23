@@ -96,6 +96,13 @@ set statusline+=%{&fileformat}]\             " file format
 "set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-3.14(%l,%c%V%)\ %<%p%%      " offset
 
+" Cursor shapes
+let g:use_cursor_shapes = 1
+if exists("g:use_cursor_shapes") && g:use_cursor_shapes
+  let &t_SI .= "\<Esc>[6 q"
+  let &t_EI .= "\<Esc>[2 q"
+endif
+
 " CursorLine
 highlight CursorLine ctermfg=None ctermbg=235
 autocmd InsertEnter * highlight CursorLine ctermfg=None ctermbg=234
