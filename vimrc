@@ -165,8 +165,12 @@ let g:syntastic_check_on_wq              = 0
 let g:syntastic_enable_signs             = 1
 let g:syntastic_aggregate_errors         = 0
 let g:syntastic_quiet_message            = 0
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list            = 1
+let g:syntastic_mode_map = {
+      \ "mode": "passive",
+      \ "active_filetypes": ["gitcommit"],
+      \ "passive_filetypes": ["ruby", "go"] }
 nnoremap <leader>i :SyntasticCheck<cr>
 
 " delimiMate
