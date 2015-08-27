@@ -1,8 +1,81 @@
-" enable pathogen bundles
-call pathogen#infect()
-call pathogen#helptags()
-
 set nocompatible
+
+" start vundle
+call vundle#begin()
+
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'AndrewRadev/switch.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'austintaylor/vim-indentobject'
+Plugin 'bling/vim-airline'
+Plugin 'bogado/file-line'
+Plugin 'burnettk/vim-angular'
+Plugin 'cespare/vim-toml'
+Plugin 'chrisbra/csv.vim'
+Plugin 'ddollar/golang-template.vim'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'fatih/vim-go'
+Plugin 'freitass/todo.txt-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'guns/xterm-color-table.vim'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'msanders/snipmate.vim'
+Plugin 'myint/language-check'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'sunaku/vim-ruby-minitest'
+Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'taq/vim-refact'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-jdaddy'
+Plugin 'tpope/vim-jdaddy'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-tbone'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/JSON.vim'
+Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'vim-scripts/text-object-left-and-right'
+Plugin 'wellle/targets.vim'
+Plugin 'xolox/vim-easytags'
+Plugin 'matchit.zip'
+Plugin 'ruby-matchit'
+Plugin 'Css-Pretty'
+Plugin 'AutoTag'
+Plugin 'closetag.vim'
+
+call vundle#end()
+
 filetype plugin indent on
 
 set path=**
@@ -295,7 +368,7 @@ cnoreabbrev E e
 
 " File types
 autocmd BufRead,BufNewFile {*.rdoc,*.md,*.mdown} set filetype=markdown
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru} set filetype=ruby
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Cheffile,config.ru,*.jbuilder} set filetype=ruby
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd FileType gitcommit setlocal spell
