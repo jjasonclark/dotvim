@@ -1,6 +1,8 @@
 set nocompatible
+filetype off
 
 " start vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -73,6 +75,7 @@ Plugin 'ruby-matchit'
 Plugin 'Css-Pretty'
 Plugin 'AutoTag'
 Plugin 'closetag.vim'
+Plugin 'netrw.vim'
 
 call vundle#end()
 
