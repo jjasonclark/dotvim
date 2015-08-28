@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 " start vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle.vim
 call vundle#begin()
 
 Plugin 'AndrewRadev/splitjoin.vim'
