@@ -74,6 +74,7 @@ Plugin 'vim-scripts/JSON.vim'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'vim-scripts/text-object-left-and-right'
 Plugin 'wellle/targets.vim'
+Plugin 'wincent/ferret'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 
@@ -229,6 +230,9 @@ autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v
 
 " YouCompleteMe
 let g:ycm_path_to_python_interpreter = "/usr/bin/python"
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Syntastic
 let g:syntastic_text_checkers            = ['language_check']
